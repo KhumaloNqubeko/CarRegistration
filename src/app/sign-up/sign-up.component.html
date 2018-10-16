@@ -1,0 +1,53 @@
+<div class="container animated slideInRight">
+  <div class="content">
+    <form class="my-form" [formGroup]="userForm" [hidden]="isLoad">
+      <h1>
+        Sign in
+      </h1>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Driver's Name</label>
+        <input type="text" class="form-control" formControlName="driverName" placeholder="Driver Name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Car Type</label>
+        <input type="text" class="form-control" formControlName="carType" placeholder="Car Type">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Car Registration</label>
+        <input type="text" class="form-control" formControlName="carRegistration" placeholder="Car Registration">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Reason for Visitation</label>
+        <textarea type="text" class="form-control" formControlName="reasonForVisitation" placeholder="Reason for Visitation">
+          </textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Person Responsible</label>
+        <input type="text" class="form-control" formControlName="personResponsible" placeholder="Person Responsible">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Username/Email</label>
+        <input type="text" class="form-control" formControlName="username" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="text" class="form-control" formControlName="password" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Confirm Password</label>
+        <input type="text" class="form-control" formControlName="password" placeholder="Confirm Password">
+      </div>
+      <div class="row">
+        <div class="col-sm-9">
+          <a (click)="cancel()">Cancel</a>
+        </div>
+        <div class="col-sm-2" style="margin-left: 5%;">
+          <button type="submit" class="btn btn-primary" (click)="submit()">Sign Up</button>
+        </div>
+      </div>
+    </form>
+    <div *ngIf="isLoad">
+      <app-spinner></app-spinner>
+    </div>
+  </div>
+</div>

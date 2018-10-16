@@ -1,0 +1,38 @@
+<header>
+  <nav>
+    <div class="row clearfix">
+      <img src="src/assets/Images/logo.gif" class="logo">
+
+      <ul class="main-nav animated slideInDown" id="check-class">
+        <li>
+          <a [routerLink]="['login']" (click)="hideMainContent()">Sign In</a>
+        </li>
+        <li>
+          <a [routerLink]="['register']" (click)="hideMainContent()">Sign Up</a>
+        </li>
+        <li>
+          <a [routerLink]="['contact']" (click)="hideMainContent()">About</a>
+        </li>
+        <li>
+          <a [routerLink]="['contact']" (click)="hideMainContent()">Administrator</a>
+        </li>
+      </ul>
+
+      <a class="mobile-icon" (click)="slideshow()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </nav>
+  <div class="main-content-header animated slideInRight" *ngIf="!isHideMainContent">
+    <div style="color: white; font-family: 'Flamenco', cursive; text-transform: uppercase">
+      <h1>Car visitation
+        <span class="colorchange">Register</span>
+      </h1>
+    </div>
+    <a class="btn btn-full" [routerLink]="['login']" (click)="hideMainContent()">Sign In</a>
+    <a class="btn btn-nav" [routerLink]="['register']" (click)="hideMainContent()">Sign Up</a>
+  </div>
+  <div class="content" [@routerAnimation]="getRouteAnimation(router)">
+    <router-outlet #router="outlet"></router-outlet>
+  </div>
+</header>
