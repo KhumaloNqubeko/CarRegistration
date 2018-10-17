@@ -21,39 +21,39 @@
       <div class="form-group" [ngClass]="displayFieldCss('carRegistration')">
         <label for="exampleInputPassword1">Car Registration</label>
         <input type="text" class="form-control" formControlName="carRegistration" placeholder="Car Registration">
-        <app-field-error-display [displayError]="isFieldValid('carRegistration')" [errorMsg]="nameError">
+        <app-field-error-display [displayError]="isFieldValid('carRegistration')" [errorMsg]="carRegistrationError">
         </app-field-error-display>
       </div>
       <div class="form-group" [ngClass]="displayFieldCss('reasonForVisitation')">
         <label for="exampleInputPassword1">Reason for Visitation</label>
         <textarea type="text" class="form-control" formControlName="reasonForVisitation" placeholder="Reason for Visitation">
           </textarea>
-          <app-field-error-display [displayError]="isFieldValid('reasonForVisitation')" [errorMsg]="nameError">
+          <app-field-error-display [displayError]="isFieldValid('reasonForVisitation')" [errorMsg]="reasonForVisitationError">
           </app-field-error-display>
       </div>
       <div class="form-group" [ngClass]="displayFieldCss('personResponsible')">
         <label for="exampleInputPassword1">Person Responsible</label>
         <input type="text" class="form-control" formControlName="personResponsible" placeholder="Person Responsible">
-        <app-field-error-display [displayError]="isFieldValid('personResponsible')" [errorMsg]="nameError">
+        <app-field-error-display [displayError]="isFieldValid('personResponsible')" [errorMsg]="personResponsibleError">
         </app-field-error-display>
       </div>
       <div class="form-group" [ngClass]="displayFieldCss('email')">
         <label for="exampleInputPassword1">Email</label>
         <input type="text" class="form-control" formControlName="email" placeholder="Email">
-        <app-field-error-display [displayError]="isFieldValid('email')" [errorMsg]="nameError">
+        <app-field-error-display [displayError]="isFieldValid('email')" [errorMsg]="emailError">
         </app-field-error-display>
       </div>
       <div class="form-group" [ngClass]="displayFieldCss('password')">
         <label for="exampleInputPassword1">Password</label>
         <input type="password" class="form-control" formControlName="password" placeholder="Password" passwordToggle required>
-        <app-field-error-display [displayError]="isFieldValid('password')" [errorMsg]="nameError" [isPasswordField]="true">
+        <app-field-error-display [displayError]="isFieldValid('password')" [errorMsg]="passwordError" [isPasswordField]="true">
         </app-field-error-display>
       </div>
       <div class="form-group" [ngClass]="displayFieldCss('confPassword')">
         <label for="exampleInputPassword1">Confirm Password</label>
         <input type="password" class="form-control" formControlName="confPassword" placeholder="Confirm Password" passwordToggle
           required>
-          <app-field-error-display [displayError]="isFieldValid('confPassword')" [errorMsg]="nameError" [isPasswordField]="true">
+          <app-field-error-display [displayError]="isFieldValid('confPassword')" [errorMsg]="confPasswordError" [isPasswordField]="true">
           </app-field-error-display>
       </div>
       <div class="row no-match" [hidden]="!noMatch">

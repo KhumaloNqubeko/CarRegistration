@@ -20,6 +20,12 @@ export class SignUpComponent implements OnInit {
 
   nameError = 'Please provide the drivers`s name !';
   carTypeError = 'Please provide the car type e.g. Van, Bakkie, SUV etc.';
+  carRegistrationError = 'Please provide the car registration number!';
+  reasonForVisitationError = 'Please provide the reason for your visitation!';
+  personResponsibleError = 'Please provide the name of the person responsible for your visitation!';
+  emailError = 'Please provide the email!';
+  passwordError = 'Please provide a password for security purposes!';
+  confPasswordError = 'Please confirm the password you just provided above!';
 
   private formSubmitAttempt: boolean;
 
