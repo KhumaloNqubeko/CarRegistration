@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 
 
 @Injectable()
-export class SignUpService {
+export class SignInService {
 
     constructor(private http: HttpClient) {}
-    public createStudent(visitor) {
 
-        return this.http.post('visitor/add-visitor', visitor);
+    public createStudent(visitor_login) {
+
+        return this.http.post('visitor/visitor-login', visitor_login);
     }
 
 }

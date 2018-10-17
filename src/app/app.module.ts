@@ -12,6 +12,11 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './common/spinner/spinner.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { HomeSignedInComponent } from './home-signed-in/home-signed-in.component';
+import {MomentModule} from 'angular2-moment/moment.module';
+import { ShowHidePasswordModule } from 'ngx-show-hide-password';
+import { NgxPasswordToggleModule } from 'ngx-password-toggle';
+import { FieldErrorDisplayComponent } from './common/field-error-display/field-error-display.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,9 @@ import { SignInComponent } from './sign-in/sign-in.component';
     HomeComponent,
     SignUpComponent,
     SpinnerComponent,
-    SignInComponent
+    SignInComponent,
+    HomeSignedInComponent,
+    FieldErrorDisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,10 @@ import { SignInComponent } from './sign-in/sign-in.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MomentModule,
+    ShowHidePasswordModule.forRoot(),
+    NgxPasswordToggleModule
   ],
   providers: [NavigationService],
   bootstrap: [AppComponent]

@@ -26,3 +26,40 @@ h1{
     font-family: 'Flamenco', cursive; 
     text-transform: uppercase;
 }
+
+.spinner{
+    margin-left: 200px;
+    padding-top: 25%;
+}
+
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+    color: black;
+  }
+
+.show-hide{
+    width: 90%;
+}
+
+.no-match{
+    border: 1px solid red;
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: rgb(213,56,56);
+    border-radius: 5px;
+}
+
+.error {
+    color: white;
+}
+
+.error-btn{
+    margin-left: 200px;
+    padding-top: 25%;
+    background-color: whitesmoke;
+}

@@ -7,10 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpinnerComponent implements OnInit {
 
-  color = 'primary';
-  mode = 'Indeterminate';
-  value = 50;
-
   constructor() { }
 
   ngOnInit() {
