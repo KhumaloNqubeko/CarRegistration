@@ -1,26 +1,42 @@
 <div class="container animated slideInRight">
   <div class="content">
-    <h1>
-      Sign in
-    </h1>
-    <form class="my-form" [formGroup]="userForm" [hidden]="isLoad">
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email</label>
-        <input type="text" class="form-control" formControlName="email" placeholder="Email">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" formControlName="password" placeholder="Password" ngModel passwordToggle required>
-      </div>
-      <div class="row">
-        <div class="col-sm-9">
-          <a (click)="cancel()">Cancel</a>
+    <div class="row">
+      <h1>
+        Sign in
+      </h1>
+    </div>
+    <div class="row" *ngIf="incorrectCreditials">
+      <app-incorrect-creditentials-alert></app-incorrect-creditentials-alert>
+    </div>
+    <div class="row">
+      <form class="my-form" [formGroup]="userForm" [hidden]="isLoad || isError">
+        <div class="form-group"  [ngClass]="displayFieldCss('email')">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="text" class="form-control" formControlName="email" placeholder="Email">
+          <app-field-error-display [displayError]="isFieldValid('email')" [errorMsg]="emailError">
+          </app-field-error-display>
         </div>
-        <div class="col-sm-2" style="margin-left: 5%;">
-          <button type="submit" class="btn btn-primary" (click)="submit()">Sign In</button>
+        <div class="form-group" [ngClass]="displayFieldCss('password')">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" formControlName="password" placeholder="Password" ngModel passwordToggle required>
+          <app-field-error-display [displayError]="isFieldValid('password')" [errorMsg]="passwordError" [isPasswordField]="true">
+          </app-field-error-display>
         </div>
-      </div>
-    </form>
+        <div class="row">
+          <div class="col-sm-9">
+            <a (click)="cancel()">Cancel</a>
+          </div>
+          <div class="col-sm-2" style="margin-left: 5%;">
+            <button type="submit" class="btn btn-primary" (click)="submit()">Sign In</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <br>
+    <br>
+    <div class="row" *ngIf="isError && !isLoad">
+        <app-system-error [errorMessage]="systemError" (refresh)="submit()"></app-system-error>
+    </div>
     <div class="spinner" *ngIf="isLoad">
       <app-spinner></app-spinner>
     </div>

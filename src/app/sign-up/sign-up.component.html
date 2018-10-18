@@ -73,17 +73,7 @@
     <br>
     <br>
     <div class="row" *ngIf="isError && !isLoad">
-      <div class="row no-match error">
-        We have a problem signing you up, please try again later and if the problem persists please call 082 514 0951.
-      </div>
-      <br>
-      <br>
-      <div class="row">
-        <div class="col-sm-5"></div>
-        <div class="col-sm-6">
-          <button class="error-btn" type="submit" class="btn btn-light" (click)="submit()">Try again</button>
-        </div>
-      </div>
+      <app-system-error [errorMessage]="systemError" (refresh)="submit()"></app-system-error>
     </div>
     <div class="spinner" *ngIf="isLoad">
       <app-spinner></app-spinner>

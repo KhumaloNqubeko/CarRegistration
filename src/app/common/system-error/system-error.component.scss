@@ -1,0 +1,21 @@
+.sys-error{
+    border: 1px solid red;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: rgb(213,56,56);
+    border-radius: 5px;
+}
+
+.col-sm-6{
+    padding-bottom: 60px;
+}
+
+#error{
+    animation:  fadein 1s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }

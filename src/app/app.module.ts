@@ -17,6 +17,8 @@ import {MomentModule} from 'angular2-moment/moment.module';
 import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 import { NgxPasswordToggleModule } from 'ngx-password-toggle';
 import { FieldErrorDisplayComponent } from './common/field-error-display/field-error-display.component';
+import { SystemErrorComponent } from './common/system-error/system-error.component';
+import { IncorrectCreditentialsAlertComponent } from './common/incorrect-creditentials-alert/incorrect-creditentials-alert.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { FieldErrorDisplayComponent } from './common/field-error-display/field-e
     SpinnerComponent,
     SignInComponent,
     HomeSignedInComponent,
-    FieldErrorDisplayComponent
+    FieldErrorDisplayComponent,
+    SystemErrorComponent,
+    IncorrectCreditentialsAlertComponent
   ],
   imports: [
     BrowserModule,

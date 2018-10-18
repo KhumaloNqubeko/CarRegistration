@@ -27,6 +27,8 @@ export class SignUpComponent implements OnInit {
   passwordError = 'Please provide a password for security purposes!';
   confPasswordError = 'Please confirm the password you just provided above!';
 
+  systemError = 'We have a problem signing you up, please try again later and if the problem persists please call 082 514 0951.';
+
   private formSubmitAttempt: boolean;
 
   constructor(
@@ -65,7 +67,7 @@ export class SignUpComponent implements OnInit {
       } else {
         this.isLoad = false;
 
-        this.validateAllFormFields(this.userForm); // {7}
+        this.validateAllFormFields(this.userForm);
       }
       this.noMatch = false;
     } else {
@@ -98,7 +100,7 @@ export class SignUpComponent implements OnInit {
 
   isFieldValid(field: string) {
     return !this.userForm.get(field).valid && this.userForm.get(field).touched ||
-    (this.userForm.get(field).untouched && this.formSubmitAttempt);
+      (this.userForm.get(field).untouched && this.formSubmitAttempt);
   }
 
   displayFieldCss(field: string) {
